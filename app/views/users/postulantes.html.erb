@@ -1,0 +1,25 @@
+<h1>Postulantes</h1>
+
+<div class="card-columns">
+  <% @users.each do |user| %>
+    <div class="card" style="width: 18rem;">
+      <!-- Mostrar la imagen de perfil del usuario -->
+      <% if user.profile_picture.attached? %>
+        <%= image_tag user.profile_picture, class: "card-img-top" %>
+      <% else %>
+        <%= image_tag "default_profile_picture.jpg", class: "card-img-top" %>
+      <% end %>
+
+      <div class="card-body">
+        <!-- Mostrar el nombre o cualquier otro atributo del usuario si lo deseas -->
+        <h5 class="card-title"><%= user.email %></h5>
+
+        <!-- Mostrar las postulaciones del usuario -->
+        <% user.postulations.each do |postulation| %>
+          <p class="card-text"><%= postulation.descripcion %></p>
+          <!-- Aquí puedes mostrar otros atributos de la postulación que desees -->
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

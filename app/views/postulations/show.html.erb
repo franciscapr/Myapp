@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @postulation %>
+
+<div>
+  <%= link_to "Edit this postulation", edit_postulation_path(@postulation) %> |
+  <%= link_to "Back to postulations", postulations_path %>
+
+  <%= button_to "Destroy this postulation", @postulation, method: :delete %>
+</div>

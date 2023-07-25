@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Postulations</h1>
+
+<div id="postulations">
+  <% @postulations.each do |postulation| %>
+    <%= render postulation %>
+    <p>
+      <%= link_to "Show this postulation", postulation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New postulation", new_postulation_path %>
